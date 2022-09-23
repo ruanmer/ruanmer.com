@@ -17,7 +17,6 @@
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
         width: 100vw;
         height: 100vh;
@@ -39,13 +38,13 @@
       }
 
       .name {
-        margin: 5px 0 0;
+        margin: 0;
         font-size: 3em;
         font-weight: 600;
       }
 
-      .jobTitle {
-        margin: 5px 0 0;
+      .headline {
+        margin: 0;
         font-size: 1.5em;
         font-weight: 300;
       }
@@ -54,9 +53,14 @@
         margin: 140px 0 0;
       }
 
+      .links {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+      }
+
       .links a {
-        display: inline-block;
-        margin: 0 10px;
         color: #0052be;
         text-decoration: none;
       }
@@ -70,7 +74,7 @@
     <header class="header">
       <img src="https://github.com/ruanmer.png" width="100px" height="100px" alt="Ruan Mer" class="avatar" />
       <h1 class="name">Ruan Mer</h1>
-      <h2 class="jobTitle">Tech Lead at Hurb</h2>
+      <h2 class="headline">Tech Lead at Hurb</h2>
     </header>
 
     <footer class="footer">
