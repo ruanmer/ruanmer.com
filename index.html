@@ -19,18 +19,23 @@
         --spacing-1: 8px;
         --spacing-2: 16px;
         --spacing-3: 24px;
-
         --font-family: 'Open Sans', sans-serif;
         --font-size-base: 16px;
         --font-size-headline-1: 3rem;
         --font-weight-headline-1: 600;
         --font-size-headline-2: 1.5rem;
         --font-weight-headline-2: 300;
-
         --text-color: #333;
         --link-color: #0052be;
-
         --body-background-color: #fff;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --text-color: #fff;
+          --link-color: #507ab0;
+          --body-background-color: #121212;
+        }
       }
 
       html,
