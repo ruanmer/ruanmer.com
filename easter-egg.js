@@ -2,45 +2,47 @@ const calcPercentage = (partialValue, totalValue) => {
   return Math.round((partialValue / totalValue) * 100);
 };
 
-const createContainerElement = () => {
+const createLinesElement = () => {
   const element = document.createElement("div");
+
+  element.classList.add("easter-egg-lines");
 
   return element;
 };
 
-const createElement = ({ left = "50%" } = {}) => {
+const createLineElement = ({ left = "50%" } = {}) => {
   const element = document.createElement("div");
 
-  element.classList.add("easter-egg");
+  element.classList.add("easter-egg-line");
   element.style.left = left;
 
   return element;
 };
 
 const init = ({ targetElement }) => {
-  const containerElement = createContainerElement();
+  const linesElement = createLinesElement();
 
-  targetElement.append(containerElement);
+  targetElement.append(linesElement);
 
   targetElement.addEventListener("click", (event) => {
     const screenWidth = window.innerWidth;
     const clickedLeftPosition = event.clientX;
     const leftPosition = `${calcPercentage(clickedLeftPosition, screenWidth)}%`;
-    const element = createElement({ left: leftPosition });
+    const lineElement = createLineElement({ left: leftPosition });
 
-    containerElement.append(element);
+    linesElement.append(lineElement);
   });
 
   // Prevent excess elements in the body
   const observerOfExcessElements = new MutationObserver(() => {
-    const allElements = containerElement.children;
+    const allLineElements = linesElement.children;
 
-    if (allElements.length > 10) {
-      allElements[0].remove();
+    if (allLineElements.length > 10) {
+      allLineElements[0].remove();
     }
   });
 
-  observerOfExcessElements.observe(containerElement, { childList: true });
+  observerOfExcessElements.observe(linesElement, { childList: true });
 };
 
 export default init;

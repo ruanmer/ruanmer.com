@@ -18,7 +18,7 @@
 
   /* background */
   --body-background-color: #fff;
-  --easter-egg-background-color: #121212;
+  --easter-egg-line-background-color: #121212;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,7 +29,7 @@
 
     /* background */
     --body-background-color: #121212;
-    --easter-egg-background-color: #fff;
+    --easter-egg-line-background-color: #fff;
   }
 }
 
@@ -98,34 +98,44 @@ body {
 /* Easter Egg style */
 @keyframes drop {
   0% {
-    top: -50%;
+    top: -30%;
   }
   100% {
     top: 110%;
   }
 }
 
-.easter-egg {
-  position: fixed;
+.easter-egg-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.easter-egg-line {
+  position: absolute;
   width: 1px;
   height: 100%;
   top: 0;
   z-index: -1;
 }
 
-.easter-egg::after {
+.easter-egg-line::after {
   content: "";
   position: absolute;
-  top: -50%;
+  top: -30%;
   left: 0;
   width: 100%;
   height: 15vh;
-  opacity: 0.5;
+  opacity: 0.3;
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    var(--easter-egg-background-color) 75%,
-    var(--easter-egg-background-color) 100%
+    var(--easter-egg-line-background-color) 75%,
+    var(--easter-egg-line-background-color) 100%
   );
   animation: drop 7s 0s infinite;
   animation-fill-mode: forwards;
