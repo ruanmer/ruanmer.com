@@ -25,9 +25,9 @@ const init = ({ targetElement }) => {
   targetElement.append(linesElement);
 
   targetElement.addEventListener("click", (event) => {
-    const screenWidth = window.innerWidth;
+    const targetWidth = targetElement.offsetWidth;
     const clickedLeftPosition = event.clientX;
-    const leftPosition = `${calcPercentage(clickedLeftPosition, screenWidth)}%`;
+    const leftPosition = `${calcPercentage(clickedLeftPosition, targetWidth)}%`;
     const lineElement = createLineElement({ left: leftPosition });
 
     linesElement.append(lineElement);
