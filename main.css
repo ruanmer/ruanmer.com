@@ -10,14 +10,14 @@
   --font-size-base: 16px;
   --font-size-headline-1: 3rem;
   --font-size-headline-2: 1.3rem;
-  --font-weight-headline-2: 300;
   --font-weight-headline-1: 600;
+  --font-weight-headline-2: 300;
 
   /* Color */
-  --text-color: #121212;
-  --link-color: #0052be;
+  --color-text: #121212;
+  --color-link: #0052be;
 
-  /* Background */
+  /* Others */
   --body-background-color: #fff;
   --easter-egg-line-background-color: #121212;
 }
@@ -25,10 +25,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* Color */
-    --text-color: #fff;
-    --link-color: #6aa2ea;
+    --color-text: #fff;
+    --color-link: #6aa2ea;
 
-    /* Background */
+    /* Others */
     --body-background-color: #121212;
     --easter-egg-line-background-color: #fff;
   }
@@ -47,7 +47,7 @@ body {
   background: var(--body-background-color);
   font-family: var(--font-family);
   font-size: var(--font-size-base);
-  color: var(--text-color);
+  color: var(--color-text);
 }
 
 .container {
@@ -93,7 +93,7 @@ body {
 }
 
 .link {
-  color: var(--link-color);
+  color: var(--color-link);
   text-decoration: none;
 }
 
@@ -102,7 +102,7 @@ body {
 }
 
 .link:focus-visible {
-  outline: 2px solid var(--link-color);
+  outline: 2px solid var(--color-link);
   outline-offset: 4px;
 }
 
